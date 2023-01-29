@@ -45,10 +45,7 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
                 <!-- product -->
                 <?php
                      //connect to database
-                     $conn = mysqli_connect("localhost", "root", "", "sallatydb");
-                     if (mysqli_connect_errno()) {
-                        echo "Failed to connect to MySQL: " . mysqli_connect_error();
-                    }
+                     require_once 'includes/db_connect.php';
                     // loop over all checked checkboxes from the form and delete the product
 
                     if (!empty($_POST['delete'])) {

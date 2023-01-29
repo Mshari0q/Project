@@ -2,11 +2,7 @@
 <html>
 <?php
 //connect to the database
-$conn = mysqli_connect("localhost", "root", "", "sallatydb");
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+require_once 'includes/db_connect.php';
 
 //get the form data
 $name = $_POST['name'];

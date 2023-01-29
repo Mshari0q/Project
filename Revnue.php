@@ -39,10 +39,7 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
     </div>
     <?php
     //connect to database
-    $conn = mysqli_connect("localhost", "root", "", "sallatydb");
-    if (mysqli_connect_errno()) {
-        echo "Failed to connect to MySQL: " . mysqli_connect_error();
-    }
+    require_once 'includes/db_connect.php';
     //retrieve data from the database
     $sql = $conn->query("
     SELECT MONTH(order_date) as month, SUM(Total_Price) as Total_Price FROM Orders GROUP BY MONTH(order_date);"

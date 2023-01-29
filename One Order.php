@@ -66,10 +66,7 @@
             <tbody>
                 <?php
                 //connect to database
-                $conn = mysqli_connect("localhost", "root", "", "sallatydb");
-                if (mysqli_connect_errno()) {
-                    echo "Failed to connect to MySQL: " . mysqli_connect_error();
-                }
+                require_once 'includes/db_connect.php';
                 //retrieve data from the database
                 $sql1 = "SELECT Order_id FROM order_product WHERE Order_id = $Order_id";
                 $result1 = mysqli_query($conn, $sql1);

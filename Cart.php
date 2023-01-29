@@ -45,10 +45,7 @@ if (!isset($_SESSION['logged_in_user']) || $_SESSION['logged_in_user'] !== true)
 
 
     //connect to database
-    $conn = mysqli_connect("localhost", "root", "", "sallatydb");
-    if (mysqli_connect_errno()) {
-        echo "Failed to connect to MySQL: " . mysqli_connect_error();
-    }
+    require_once 'includes/db_connect.php';
 
     if (!isset($_SESSION['cart'])) {
         $_SESSION['cart'] = array();

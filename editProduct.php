@@ -41,10 +41,7 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
     <?php
               $product_id = $_GET['product_id'];
                 //connect to database
-                $conn = mysqli_connect("localhost", "root", "", "sallatydb");
-                if (mysqli_connect_errno()) {
-                    echo "Failed to connect to MySQL: " . mysqli_connect_error();
-                }
+                require_once 'includes/db_connect.php';
                 //retrieve data from the database
                 $sql = "SELECT * FROM product WHERE Product_id = $product_id";  
                 $result = mysqli_query($conn, $sql);

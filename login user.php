@@ -13,7 +13,7 @@
 session_start();
 
 //connect to the database
-$conn = mysqli_connect("localhost", "root", "", "sallatydb");
+require_once 'includes/db_connect.php';
 
 if (isset($_POST['loginPhone'])) {
     //retrieve user information from the database

@@ -62,10 +62,7 @@
                 }
                 
                 //connect to database
-                $conn = mysqli_connect("localhost", "root", "", "sallatydb");
-                if (mysqli_connect_errno()) {
-                    echo "Failed to connect to MySQL: " . mysqli_connect_error();
-                }
+                require_once 'includes/db_connect.php';
                 //retrieve data from the database
                 $query = "SELECT * FROM product";
                 $result = mysqli_query($conn, $query);

@@ -89,10 +89,7 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
                 
 
                 //connect to database
-                $conn = mysqli_connect("localhost", "root", "", "sallatydb");
-                if (mysqli_connect_errno()) {
-                    echo "Failed to connect to MySQL: " . mysqli_connect_error();
-                }
+                require_once 'includes/db_connect.php';
                 //add data to the database
                 echo $_POST['category'];
                 $query = "insert into product (Name, Price, Image, Description, Category_name) values ('$_POST[name]', '$_POST[price]', '$target_file', '$_POST[description]', '$_POST[category]')";

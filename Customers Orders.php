@@ -61,10 +61,7 @@ if (!isset($_SESSION['logged_in_user']) || $_SESSION['logged_in_user'] !== true)
             <tbody>
                 <?php
                 //connect to database
-                $conn = mysqli_connect("localhost", "root", "", "sallatydb");
-                if (mysqli_connect_errno()) {
-                    echo "Failed to connect to MySQL: " . mysqli_connect_error();
-                }
+                require_once 'includes/db_connect.php';
                 //retrieve data from the database for the logged-in user
                 $query = "SELECT id FROM Customer WHERE phone = '" . $_SESSION['phone'] . "'";
                 $result = mysqli_query($conn, $query);

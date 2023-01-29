@@ -66,22 +66,7 @@ mysqli_close($conn);
             <h3>Don't have an account? <a href="Register.php"><button type="button" class="btn-cart"> Register</a></button></h3>
         </form>
     </div>
-    <script>
-        window.onscroll = function() {
-            myFunction()
-        };
-
-        var header = document.getElementById("myHeader");
-        var sticky = header.offsetTop;
-
-        function myFunction() {
-            if (window.pageYOffset > sticky) {
-                header.classList.add("sticky");
-            } else {
-                header.classList.remove("sticky");
-            }
-        }
-    </script>
+    <?php include 'includes/stickyHeader.php'; ?>
     <script>
         function validateForm() {
             var inputs = document.getElementsByTagName("input");

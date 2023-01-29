@@ -132,6 +132,7 @@ if (!isset($_SESSION['logged_in_user']) || $_SESSION['logged_in_user'] !== true)
 
         </div>
     </div>
+    <?php include 'includes/stickyHeader.php'; ?>
 </body>
 
 </html>

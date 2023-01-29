@@ -86,22 +86,7 @@ if (!isset($_SESSION['logged_in_user']) || $_SESSION['logged_in_user'] !== true)
             </tbody>
         </table>
     </div>
+    <?php include 'includes/stickyHeader.php'; ?>
 </body>
 
 </html>
-<script>
-    window.onscroll = function() {
-        myFunction()
-    };
-
-    var header = document.getElementById("myHeader");
-    var sticky = header.offsetTop;
-
-    function myFunction() {
-        if (window.pageYOffset > sticky) {
-            header.classList.add("sticky");
-        } else {
-            header.classList.remove("sticky");
-        }
-    }
-</script>

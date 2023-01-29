@@ -73,7 +73,7 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
                         </div>
                         <div class="product-info">
                             <div class="product-info-top">
-                                <h2 class="sm-title"><?php echo $row['Description']; ?></h2>
+                                <h2 class="sm-title"><?php echo $row['Category_name']; ?></h2>
                             </div>
                             <a href="One Product.php?product_id=<?php echo $row['Product_id']; ?>" class="product-name"><?php echo $row['Name']; ?></a>
                             <p class="product-price">SAR <?php echo $row['Price']; ?></p> <input type="checkbox" id=<?php echo $row['Name'] ?> name="delete[]" value=<?php echo $row['Product_id'] ?>>

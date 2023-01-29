@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 28, 2023 at 06:58 PM
+-- Generation Time: Jan 29, 2023 at 01:45 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -84,9 +84,7 @@ CREATE TABLE `customer` (
 -- Dumping data for table `customer`
 --
 
-INSERT INTO `customer` (`id`, `name`, `age`, `email`, `phone`, `address`, `created_at`) VALUES
-(1, 'mshari', 21, 'ma@outl.com', '+966312891234', 'adsdas', '2023-01-27 17:14:17'),
-(2, 'msh', 20, 'mshari@gmail.com', '+96654754577', 'sa', '2023-01-28 17:17:56');
+
 
 -- --------------------------------------------------------
 
@@ -105,10 +103,7 @@ CREATE TABLE `orders` (
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`Order_id`, `order_date`, `Total_Price`, `customer_id`) VALUES
-(1, '2023-01-25', 620, NULL),
-(2, '2023-01-23', 238, NULL),
-(3, '2023-02-08', 161, NULL);
+
 
 -- --------------------------------------------------------
 
@@ -127,12 +122,6 @@ CREATE TABLE `order_product` (
 -- Dumping data for table `order_product`
 --
 
-INSERT INTO `order_product` (`id`, `Order_id`, `Product_id`, `Quantity`) VALUES
-(1, 1, 3, 2),
-(2, 1, 2, 1),
-(3, 2, 7, 1),
-(4, 3, 2, 5),
-(5, 3, 5, 1);
 
 -- --------------------------------------------------------
 
@@ -154,15 +143,7 @@ CREATE TABLE `product` (
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`Product_id`, `Name`, `Price`, `Description`, `Image`, `Category_name`, `Quantity`) VALUES
-(1, 'Tanmiah Fresh Chicken Thighs 450g', 10, 'Bla Bla', 'images/meat.png', 'MEAT & POULTRY', NULL),
-(2, 'Oreo Classic 38g× 16', 20, 'Bla Bla', 'images/Oreo.jpg', 'BISCUITS, CRACKERS & CAKES', NULL),
-(3, 'Philips coffee maker, HD7432/2', 300, 'BLA BLA', 'images/PHILIPS COFFEE.jpg', 'ELECTRONICS & APPLIANCES', NULL),
-(4, 'Al Walimah Style Indian Basmati Rice Longgrain 5kg', 45, 'BLA BLA', 'images/Rice.png', 'RICE, PASTA & PULSES', NULL),
-(5, 'Saudia Long Life Full Fat Milk 1L × 12 Pieces', 61, 'BLA BLA', 'images/Saudi Milk.jpg', 'MILK & LABAN', NULL),
-(6, 'Nova Water 550ml ×24', 20, 'BLA BLA', 'images/Nova.jpg', 'WATER', NULL),
-(7, 'Nikai NAF788A Air Fryer 3L', 238, 'BLA BLA', 'images/Fryer.jpg', 'ELECTRONICS & APPLIANCES', NULL),
-(8, 'Alyoum Premium Fresh Chicken Chilled 1kg', 19, 'BLA BLA', 'images/Chicken.jpg', 'MEAT & POULTRY', NULL);
+
 
 --
 -- Indexes for dumped tables
@@ -235,19 +216,19 @@ ALTER TABLE `customer`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `Order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `Order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `order_product`
 --
 ALTER TABLE `order_product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `Product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `Product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Constraints for dumped tables

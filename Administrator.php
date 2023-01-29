@@ -2,7 +2,7 @@
 <html>
 <?php
 session_start();
-if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
+if (!isset($_SESSION['logged_in'])) {
     header("Location: login.php");
     exit;
 }
@@ -46,7 +46,7 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
                     <img src="images/user.png" width="100px" height="100px">
                 </div>
                 <div class="admin-name">
-                    <h3>Admin</h3>
+                   <h3>Admin</h3>
                 </div>
 
 
@@ -54,12 +54,11 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
 
 
             <ul>
-                <li><a href="Administratordash.html">Dashboard</a></li>
-                <li><a href="Productspag3.html">Products</a></li>
-                <li><a href="Customers.html">Customers</a></li>
-                <li><a href="Orders.html">Orders</a></li>
-                <li><a href="Reports.html">Reports</a></li>
-                <li><a href="settings.html">settings</a></li>
+                <li><a href="Administrator.php">Dashboard</a></li>
+                <li><a href="adminProducts.php">Products</a></li>
+                <li><a href="Customers.php">Customers</a></li>
+                <li><a href="Orders.php">Orders</a></li>
+                <li><a href="Revenue.php">Revenue</a></li>
             </ul>
             <div class="logout-btn">
                 <a href="logout.php">Logout</a>
@@ -97,9 +96,9 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
                             <img src="images/money.png" width="50px" height="50px">
 
                         </div>
-                        <h2>Revnue</h2>
+                        <h2>Revenue</h2>
 
-                        <a href="Revnue.php">Go to Revnue</a>
+                        <a href="Revenue.php">Go to Revenue</a>
                     </div>
                     <div class="dashboard-box">
                         <div class="box-icon">

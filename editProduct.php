@@ -83,21 +83,28 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
                                     if($row['Name'] == $product['Category_name'])
                                         echo "<option value='" . $row['Name'] . "' selected>" . $row['Name'] . "</option>";
                                     else
-                                    echo "<option value='" . $row['Name'] . "'>" . $row['Name'] . "</option>";
+                                        echo "<option value='" . $row['Name'] . "'>" . $row['Name'] . "</option>";
                                 }
                             ?>
                            </select>
                            
                         </div>
                         <div class="add-product-form-col">
-                            <label for="image">Image</label>
-                            <input type="file" name="image" id="image" src="<?php echo $product['Image']; ?>">
+
+
+                            <label for="qunat">quantity</label>
+                            <input type="number" name="quant" id="quant" min = 0 value = <?php echo $product['Quantity'] ?> >
                         </div>
+                       
                     </div>
                     <div class="add-product-form-row">
                         <div class="add-product-form-col">
                             <label for="description">Description</label>
                             <textarea name="description" id="description" cols="30" rows="10" ><?php echo $product['Description']; ?></textarea>
+                        </div>
+                        <div class="add-product-form-col">
+                            <label for="image">Image</label>
+                            <input type="file" name="image" id="image" src="<?php echo $product['Image']; ?>">
                         </div>
                     </div>
                     <div class="add-product-form-row">

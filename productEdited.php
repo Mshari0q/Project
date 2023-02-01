@@ -96,12 +96,14 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
                 require_once 'includes/db_connect.php';
                 //add data to the database
                 
-                $query = "UPDATE product SET Name = '$_POST[name]', Price = '$_POST[price]', Description = '$_POST[description]', Category_name = '$_POST[category]' WHERE product_id = '$_POST[product_id]'";
+                $query = "UPDATE product SET Name = '$_POST[name]', Price = '$_POST[price]', Description = '$_POST[description]', Category_name = '$_POST[category]', Quantity = '$_POST[quant]' WHERE product_id = '$_POST[product_id]'";
                 $result = mysqli_query($conn, $query);
                
                 echo "Product Edited Successfully";
                 if($imgQuery != ""){
+
                 $result = mysqli_query($conn, $imgQuery);
+                
                 }
                 mysqli_close($conn);
                 ?>

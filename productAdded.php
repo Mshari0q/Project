@@ -92,7 +92,7 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
                 require_once 'includes/db_connect.php';
                 //add data to the database
                 echo $_POST['category'];
-                $query = "insert into product (Name, Price, Image, Description, Category_name) values ('$_POST[name]', '$_POST[price]', '$target_file', '$_POST[description]', '$_POST[category]')";
+                $query = "insert into product (Name, Price, Image, Description, Category_name, Quantity) values ('$_POST[name]', '$_POST[price]', '$target_file', '$_POST[description]', '$_POST[category]', '$_POST[quant]')";
                 $result = mysqli_query($conn, $query);
 
         

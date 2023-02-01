@@ -73,14 +73,18 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
                            </select>
                         </div>
                         <div class="add-product-form-col">
-                            <label for="image">Image</label>
-                            <input type="file" name="image" id="image">
+                            <label for="qunat">quantity</label>
+                            <input type="number" name="quant" id="quant" min = 0>
                         </div>
                     </div>
                     <div class="add-product-form-row">
                         <div class="add-product-form-col">
                             <label for="description">Description</label>
                             <textarea name="description" id="description" cols="30" rows="10" placeholder="Enter product description"></textarea>
+                        </div>
+                        <div class="add-product-form-col">
+                            <label for="image">Image</label>
+                            <input type="file" name="image" id="image">
                         </div>
                     </div>
                     <div class="add-product-form-row">

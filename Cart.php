@@ -85,11 +85,12 @@ if (!isset($_SESSION['logged_in_user']) || $_SESSION['logged_in_user'] !== true)
                     $name = $row['Name'];
                     $price = $row['Price'];
                     $image = $row['Image'];
+                    $maxQ = $row['Quantity'];
                     $total = $price * $quan;
                     $subtotal += $total;
 
                     echo "<tr> <td> <div class='cart-info'> <img src='$image'> <div> <p>$name</p> <small>Price: $price SAR</small> <br> <a href='Cart.php?
-                    product_id=$pid&quantity=0'>Remove</a> </div> </div> </td> <td><input type='number' name='$pid' form='update-form' value='$quan' min='1'></td>
+                    product_id=$pid&quantity=0'>Remove</a> </div> </div> </td> <td><input type='number' name='$pid' form='update-form' value='$quan' min='1' max='$maxQ'></td>
                      <td>$total SAR</td> </tr>";
                 }
 

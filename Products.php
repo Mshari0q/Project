@@ -67,6 +67,7 @@
                 $query = "SELECT * FROM product";
                 $result = mysqli_query($conn, $query);
 
+
                 //loop through the result set and display the information
                 while ($row = mysqli_fetch_assoc($result)) {
                 ?>
@@ -78,8 +79,8 @@
                             <div class="product-btns">
                                 <form action="<?php filter_input(INPUT_SERVER, 'PHP_SELF', FILTER_SANITIZE_URL) ?>" >
                                     <input type="hidden" name="pid" id="pid" value="<?php echo $row['Product_id']; ?>">
-                                    <input type="number" name="quantity" id="quantity" value="1" min="1" max="10000">
-                                    <button type="submit" class="btn-cart" > add to cart</button>
+                                    <input type="number" name="quantity" id="quantity" value="<?php if($row['Quantity'] == '0') {echo 0;} else {echo 1;} ?>" min="0" max="<?php echo $row['Quantity'] ?>">
+                                    <button type="submit" class="btn-cart" > <?php if($row['Quantity'] == '0') {echo 'out of stock';} else {echo 'add to cart';} ?> </button>
                                 </form>
                                 
                             </div>
@@ -92,8 +93,10 @@
                             <p class="product-price">SAR <?php echo $row['Price']; ?></p>
                         </div>
                     </div>
+                
                 <?php
                 }
+                
                 mysqli_close($conn);
                 
                 ?>

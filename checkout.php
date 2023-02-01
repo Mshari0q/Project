@@ -65,6 +65,8 @@
                     if(mysqli_query($conn, $sql)){
                         $order_id = mysqli_insert_id($conn);
                         foreach($_SESSION['cart'] as $pid => $quan){
+                            $subQuant = "update product set Quantity = Quantity - $quan where Product_id = $pid";
+                            mysqli_query($conn, $subQuant);
                             $sql = "INSERT INTO order_product (order_id, product_id, quantity) VALUES ('$order_id', '$pid', '$quan')";
                             if(mysqli_query($conn, $sql)){
                                echo "Records inserted successfully.";

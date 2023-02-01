@@ -79,7 +79,7 @@
                             <div class="product-btns">
                                 <form action="<?php filter_input(INPUT_SERVER, 'PHP_SELF', FILTER_SANITIZE_URL) ?>" >
                                     <input type="hidden" name="pid" id="pid" value="<?php echo $row['Product_id']; ?>">
-                                    <input type="number" name="quantity" id="quantity" value="<?php if($row['Quantity'] == '0') {echo 0;} else {echo 1;} ?>" min="0" max="<?php echo $row['Quantity'] ?>">
+                                   <?php if($row['Quantity'] != '0'){ echo '<input type="number" name="quantity" id="quantity" value="1" min="0" max='; echo $row['Quantity']; echo '>';} ?>
                                     <button type="submit" class="btn-cart" > <?php if($row['Quantity'] == '0') {echo 'out of stock';} else {echo 'add to cart';} ?> </button>
                                 </form>
                                 

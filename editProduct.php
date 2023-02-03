@@ -34,7 +34,7 @@
                 <h1>edit Product: <?php echo $product['Name']; ?></h1>
             </div>
             <div class="add-product-form">
-                <form action="productEdited.php" method="POST" enctype="multipart/form-data">
+                <form action="modifyProducts.php" method="POST" enctype="multipart/form-data">
                     <div class="add-product-form-row">
                         <div class="add-product-form-col">
                             <label for="name">Name</label>

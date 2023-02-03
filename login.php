@@ -17,6 +17,7 @@ require_once 'includes/db_connect.php';
 
 if (isset($_POST['loginUser']) && isset($_POST['loginPassword'])) {
   //retrieve user information from the database
+  $_SESSION['loginUser'] = $_POST['loginUser'];
   $query = "SELECT * FROM admin WHERE email='" . $_POST['loginUser'] . "' AND Password='" . $_POST['loginPassword'] . "'";
   $result = mysqli_query($conn, $query);
 

@@ -22,7 +22,7 @@
                     <img src="images/user.png" width="100px" height="100px">
                 </div>
                 <div class="admin-name">
-                   <h3>Admin</h3>
+                   <h3><?php echo $_SESSION['loginUser'] ?></h3>
                 </div>
 
 

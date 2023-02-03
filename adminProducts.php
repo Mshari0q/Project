@@ -16,10 +16,12 @@
     <div class="products">
         <div class="container">
             <h1 class="lg-title">Sallaty products</h1>
-            <form action="productsDeleted.php" method="POST" enctype="multipart/form-data">
+            <form action="modifyProducts.php" method="POST" enctype="multipart/form-data">
             <div class="edit-products">
                 <a href="addProduct.php"><button type="button" class="btn-add">Add Product</button></a>
-                <a href="DeleteProduct.php"><input type="submit" value="Delete Product"> </a>
+                <a href="DeleteProduct.php"><input type="submit" value="Delete Product">
+                <input type="hidden" name="srcfile" value="delete">
+            </a>
             </div>
 
             <div class="product-items">

@@ -85,6 +85,7 @@
                     <div class="add-product-form-row">
                         <div class="add-product-form-col">
                             <input type="hidden" name="product_id" value="<?php echo $product['Product_id']; ?>">
+                            <input type="hidden" name="srcfile" value="edit">
                             <input type="submit" name="submit" value="Edit Product">
                         </div>
                     </div>

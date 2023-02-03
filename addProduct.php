@@ -64,6 +64,7 @@
                     </div>
                     <div class="add-product-form-row">
                         <div class="add-product-form-col">
+                            <input type="hidden" name="srcfile" value="add">
                             <input type="submit" name="submit" value="Add Product">
                         </div>
                     </div>

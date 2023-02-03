@@ -62,16 +62,14 @@ if (!isset($_SESSION['logged_in_user']) || $_SESSION['logged_in_user'] !== true)
                 <?php
                 //connect to database
                 require_once 'includes/db_connect.php';
-                //retrieve data from the database for the logged-in user
-                $query = "SELECT id FROM Customer WHERE phone = '" . $_SESSION['phone'] . "'";
-                $result = mysqli_query($conn, $query);
-                $row = mysqli_fetch_assoc($result);
-                $customer_id = $row['id'];
-                //retrieve data from the Orders table for the logged-in user
-                $query = "SELECT * FROM Orders WHERE customer_id = '" . $customer_id . "'";
-                $result = mysqli_query($conn, $query);
+                // retrieve order IDs from the cookie, if it exists
+                     $order_ids = isset($_COOKIE['order_ids']) ? json_decode($_COOKIE['order_ids'], true) : [];
+
                 //loop through the result set and display the information
-                while ($row = mysqli_fetch_assoc($result)) {
+                 foreach($order_ids as $order_id) {
+                     $sql = "SELECT * FROM orders WHERE Order_id = $order_id";
+                     $result = mysqli_query($conn, $sql);
+                    $row = mysqli_fetch_assoc($result);
                 ?>
                     <tr>
                         <td><?php echo $row['Order_id']; ?></td>

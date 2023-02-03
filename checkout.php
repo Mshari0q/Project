@@ -65,6 +65,7 @@
                     if(mysqli_query($conn, $sql)){
                         $order_id = mysqli_insert_id($conn);
                         foreach($_SESSION['cart'] as $pid => $quan){
+                           
                             $subQuant = "update product set Quantity = Quantity - $quan where Product_id = $pid";
                             mysqli_query($conn, $subQuant);
                             $sql = "INSERT INTO order_product (order_id, product_id, quantity) VALUES ('$order_id', '$pid', '$quan')";
@@ -75,7 +76,14 @@
                                 echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
                             }
                         }
+                       // retrieve order IDs from the cookie, if it exists
+                            $order_ids = isset($_COOKIE['order_ids']) ? json_decode($_COOKIE['order_ids'], true) : [];
 
+                        // add the new order ID to the array
+                            $order_ids[] = $order_id;
+
+                        // store the updated array in a cookie
+                            setcookie('order_ids', json_encode($order_ids), time() + (86400 * 30), "/");
                     } else{
                         echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
                     }

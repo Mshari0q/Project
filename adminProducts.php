@@ -1,14 +1,6 @@
 <!DOCTYPE html>
 <html>
-<?php
-// check if user is logged in
-session_start();
-if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
-    header("Location: login.php");
-    exit;
-}
-
-?>
+<?php require_once 'includes/adminlogin.php'; ?>
 <head>
     <meta charset="UTF-8">
     <title>Products-Sallaty</title>

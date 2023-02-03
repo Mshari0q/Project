@@ -12,22 +12,7 @@
 </head>
 
 <body class="body-color">
-    <div class="header" id="myHeader">
-        <div class="container">
-            <div class="navbar">
-                <div class="logo">
-                    <a href="index.html"><img src="images/logo-corp-prev.png" width="125px"></a>
-                </div>
-                <nav>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="Products.php">Products</a></li>
-                        <li><a href="Contact.html">Contact us</a></li>
-                        <li><a href="Administrator.php">Administrator</a></li>
-                    </ul>
-                </nav>
-                <a href="Cart.php"><img src="images/Cart.png" width="50px" height="50px"></a>
-            </div>
+    <?php require_once 'includes/header.php'; ?>
             <div class="row">
                 <div class="col-2">
                     <h1>Say goodbye to crowded aisles and long lines <br>Start shopping with Sallaty!</h1>

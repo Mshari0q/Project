@@ -129,24 +129,7 @@
 <link rel="stylesheet" href="style.css">
 
 <body class="body-color">
-    <div class="header" id="myHeader">
-        <div class="container">
-            <div class="navbar">
-                <div class="logo">
-                    <img src="images/logo-corp-prev.png" width="125px">
-                </div>
-                <nav>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="Products.php">Products</a></li>
-                        <li><a href="Contact.html">Contact us</a></li>
-                        <li><a href="Administrator.php">Administrator</a></li>
-                    </ul>
-                </nav>
-                <a href="Cart.php"><img src="images/Cart.png" width="50px" height="50px"></a>
-            </div>
-        </div>
-    </div>
+<?php require_once 'includes/header.php'; ?>
 
     <!-- body -->
     <div class="body">

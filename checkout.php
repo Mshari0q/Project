@@ -57,10 +57,10 @@
                     $amountPaid = $subtotal * 1.15;
                     $order_date = date("Y-m-d");
                 //retrieve data from the database for the logged-in user
-                $query = "SELECT id FROM Customer WHERE phone = '" . $_SESSION['phone'] . "'";
-                $result = mysqli_query($conn, $query);
-                $row = mysqli_fetch_assoc($result);
-                $customer_id = $row['id'];
+                // $query = "SELECT id FROM Customer WHERE phone = '" . $_SESSION['phone'] . "'";
+                // $result = mysqli_query($conn, $query);
+                // $row = mysqli_fetch_assoc($result);
+                $customer_id = 1;
                     $sql = "INSERT INTO orders (order_date, Total_Price, customer_id) VALUES ('$order_date', '$amountPaid', '$customer_id')";
                     if(mysqli_query($conn, $sql)){
                         $order_id = mysqli_insert_id($conn);

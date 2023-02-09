@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <?php
-session_start();
-if (!isset($_SESSION['logged_in_user']) || $_SESSION['logged_in_user'] !== true) {
-    header("Location: login user.php");
-    exit;
-}
+ session_start();
+// if (!isset($_SESSION['logged_in_user']) || $_SESSION['logged_in_user'] !== true) {
+//     header("Location: login user.php");
+//     exit;
+// }
 ?>
 <html>
 
@@ -89,8 +89,7 @@ if (!isset($_SESSION['logged_in_user']) || $_SESSION['logged_in_user'] !== true)
                     $total = $price * $quan;
                     $subtotal += $total;
 
-                    echo "<tr> <td> <div class='cart-info'> <img src='$image'> <div> <p>$name</p> <small>Price: $price SAR</small> <br> <a href='Cart.php?
-                    product_id=$pid&quantity=0'>Remove</a> </div> </div> </td> <td><input type='number' name='$pid' form='update-form' value='$quan' min='1' max='$maxQ'></td>
+                    echo "<tr> <td> <div class='cart-info'> <img src='$image'> <div> <p>$name</p> <small>Price: $price SAR</small> <br> <a href='Cart.php?product_id=$pid'>Remove</a> </div> </div> </td> <td><input type='number' name='$pid' form='update-form' value='$quan' min='1' max='$maxQ'></td>
                      <td>$total SAR</td> </tr>";
                 }
 

@@ -43,7 +43,7 @@
           //add data to the database
     
             $query = "UPDATE product SET Name = '$_POST[name]', Price = '$_POST[price]', Description = '$_POST[description]', Category_name = '$_POST[category]', Quantity = '$_POST[quant]' WHERE product_id = '$_POST[product_id]'";
-            $result = mysqli_query($conn, $query);
+            mysqli_query($conn, $query);
    
             echo "Product Edited Successfully";
              if($imgQuery != ""){

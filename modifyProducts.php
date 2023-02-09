@@ -25,7 +25,7 @@
             foreach ($_POST['delete'] as $value) {   
                  //delete data from the database
                     $query = "DELETE FROM product WHERE Product_id = '$value'";
-                    $result = mysqli_query($conn, $query);
+                    mysqli_query($conn, $query);
             }
 
             echo 'Item(s) deleted successfully.';
@@ -48,7 +48,7 @@
             echo "Product Edited Successfully";
              if($imgQuery != ""){
 
-             $result = mysqli_query($conn, $imgQuery);
+            mysqli_query($conn, $imgQuery);
 
             }
     }else if($_POST['srcfile'] == 'add'){
@@ -64,7 +64,7 @@
     //add data to the database
     echo $_POST['category'];
     $query = "insert into product (Name, Price, Image, Description, Category_name, Quantity) values ('$_POST[name]', '$_POST[price]', '$target_file', '$_POST[description]', '$_POST[category]', '$_POST[quant]')";
-    $result = mysqli_query($conn, $query);
+    mysqli_query($conn, $query);
 
 
    

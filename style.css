@@ -89,6 +89,9 @@
 
  .header {
      background: #b26a3e;
+     position: sticky;
+     z-index: 9999;
+     top: 0;
  }
 
  body {
@@ -774,47 +777,55 @@
 }
 /*--- Admin Product ---*/
 .products .edit-products{
-    display: flex;
-    flex-direction: row;
+    overflow: hidden;
     background-color: #b26a3e;
-    width: 100%;
    
 }
-.products .edit-products a{
-    margin-left: 20px;
-   
-}
-.products .edit-products button{
-    width: 140px;
-    height: 50px;
-    background-color: #b26a3e;;
-    border: none;
-    color: #fff;
-    font-size: 16px;
-    font-weight: 600;
+
+.products .edit-products a button{
+    background: #b26a3e;
+    padding: 0.8rem 0;
+    width: 150px;
+    font-size: 1rem;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
     cursor: pointer;
-    opacity: 0.8;
-    transition: 1s;
-}
-.products .edit-products button:hover{
-    opacity: 1;
-    background-color: #FFA62B;
-   
-}
-.products .edit-products input{
-    width: 140px;
-    height: 50px;
-    background-color: #b26a3e;;
     border: none;
-    color: #fff;
-    font-size: 16px;
-    font-weight: 600;
+    transition: all 0.6s ease;
+
+
+}
+.products .edit-products a button:hover{
+    background: #b37c5a;
+    color: #ffffff;
+}
+
+.products .edit-products a input{
+    background: #b26a3e;
+    padding: 0.8rem 0;
+    width: 150px;
+    font-size: 1rem;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
     cursor: pointer;
-    opacity: 0.8;
-    transition: 1s;
+    border: none;
+    transition: all 0.6s ease;
+
 }
-.products .edit-products input:hover{
-    opacity: 1;
-    background-color: #FFA62B;
+.products .edit-products a input:hover{
+    background: #b37c5a;
+    color: #ffffff;
+}
+
+
+.edit-products input[type=text] {
+    float: right;
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
    
+    
 }
+

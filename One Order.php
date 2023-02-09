@@ -18,7 +18,7 @@
         <a href="<?php
                     if (isset($_SESSION['logged_in'])) {
                         echo "Orders.php";
-                    } else if (isset($_SESSION['logged_in_user'])) {
+                    } else {
                         echo "Customers Orders.php";
                     }
                     ?>" class="back-image"><img src="images/double arrow.png" width="50px" height="50px"></a>

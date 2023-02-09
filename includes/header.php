@@ -10,6 +10,7 @@
                         <li><a href="index.php">Home</a></li>
                         <li><a href="Products.php">Products</a></li>
                         <li><a href="Contact.php">Contact us</a></li>
+                        <li><a href="Customers Orders.php">Previous Orders</a></li>
                         <li><a href="Administrator.php">Administrator</a></li>
                     </ul>
                 </nav>

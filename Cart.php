@@ -18,25 +18,7 @@
 </head>
 
 <body>
-    <div class="header">
-        <div class="container">
-            <div class="navbar">
-                <div class="logo">
-                    <a href="index.html"><img src="images/logo-corp-prev.png" width="125px"></a>
-                </div>
-                <nav>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="Products.php">Products</a></li>
-                        <li><a href="Contact.html">Contact us</a></li>
-                        <li><a href="Customers Orders.php">Previous Orders</a></li>
-                        <li><a href="Administrator.php">Administrator</a></li>
-                    </ul>
-                </nav>
-                <a href="Cart.php"><img src="images/Cart.png" width="50px" height="50px"></a>
-            </div>
-        </div>
-    </div>
+<?php require_once 'includes/header.php'; ?>
     <!--Cart Items-->
     <!-- product -->
     <?php
@@ -50,7 +32,10 @@
     if (!isset($_SESSION['cart'])) {
         $_SESSION['cart'] = array();
     }
-
+    if(isset($_GET['remove_id'])){
+        $pid = $_GET['remove_id'];
+        unset($_SESSION['cart'][$pid]);
+    }
 
 
     ?>
@@ -89,7 +74,7 @@
                     $total = $price * $quan;
                     $subtotal += $total;
 
-                    echo "<tr> <td> <div class='cart-info'> <img src='$image'> <div> <p>$name</p> <small>Price: $price SAR</small> <br> <a href='Cart.php?product_id=$pid'>Remove</a> </div> </div> </td> <td><input type='number' name='$pid' form='update-form' value='$quan' min='1' max='$maxQ'></td>
+                    echo "<tr> <td> <div class='cart-info'> <img src='$image'> <div> <p>$name</p> <small>Price: $price SAR</small> <br> <a href='Cart.php?remove_id=$pid'>Remove</a> </div> </div> </td> <td><input type='number' name='$pid' form='update-form' value='$quan' min='1' max='$maxQ'></td>
                      <td>$total SAR</td> </tr>";
                 }
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 29, 2023 at 01:45 PM
+-- Generation Time: Feb 09, 2023 at 01:12 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -39,7 +39,23 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`Admin_id`, `Name`, `Email`, `Password`) VALUES
-(1, '123', '123', '123');
+(1, '123', '123', '123'),
+(2, 'David Williams', 'david@example.com', 'password'),
+(3, 'Emily Brown', 'emily@example.com', 'password'),
+(4, 'James Smith', 'james@example.com', 'password'),
+(5, 'Sophia Johnson', 'sophia@example.com', 'password'),
+(6, 'Olivia Williams', 'olivia@example.com', 'password'),
+(7, 'Ava Brown', 'ava@example.com', 'password'),
+(8, 'Isabella Smith', 'isabella@example.com', 'password'),
+(9, 'Mia Johnson', 'mia@example.com', 'password'),
+(10, 'Abigail Williams', 'abigail@example.com', 'password'),
+(11, 'Emily Brown', 'emily@example.com', 'password'),
+(12, 'Charlotte Smith', 'charlotte@example.com', 'password'),
+(13, 'Harper Johnson', 'harper@example.com', 'password'),
+(14, 'Amelia Williams', 'amelia@example.com', 'password'),
+(15, 'Evelyn Brown', 'evelyn@example.com', 'password'),
+(16, 'Elizabeth Smith', 'elizabeth@example.com', 'password'),
+(17, 'Sofia Johnson', 'sofia@example.com', 'password');
 
 -- --------------------------------------------------------
 
@@ -84,7 +100,10 @@ CREATE TABLE `customer` (
 -- Dumping data for table `customer`
 --
 
-
+INSERT INTO `customer` (`id`, `name`, `age`, `email`, `phone`, `address`, `created_at`) VALUES
+(1, 'Ally', 20, 'ally@gmail.com', '+96654754512', 'Dammam 2A Street', '2023-01-29 13:29:48'),
+(2, 'Alex', 35, 'alex@gmail.com', '+96654154511', 'Dammam 2b street', '2023-01-29 13:31:16'),
+(3, 'Mshari', 22, 'mshari@gmail.com', '+96654754577', 'Dammam 2A Street', '2023-01-29 13:31:58');
 
 -- --------------------------------------------------------
 
@@ -103,7 +122,11 @@ CREATE TABLE `orders` (
 -- Dumping data for table `orders`
 --
 
-
+INSERT INTO `orders` (`Order_id`, `order_date`, `Total_Price`, `customer_id`) VALUES
+(1, '2023-01-29', 132.25, 3),
+(2, '2023-01-29', 915.4, 3),
+(3, '2023-01-29', 74.75, 2),
+(4, '2023-02-08', 396.75, 1);
 
 -- --------------------------------------------------------
 
@@ -122,6 +145,17 @@ CREATE TABLE `order_product` (
 -- Dumping data for table `order_product`
 --
 
+INSERT INTO `order_product` (`id`, `Order_id`, `Product_id`, `Quantity`) VALUES
+(1, 1, 1, 3),
+(2, 1, 6, 2),
+(3, 1, 4, 1),
+(4, 2, 3, 1),
+(5, 2, 2, 1),
+(6, 2, 7, 2),
+(7, 3, 4, 1),
+(8, 3, 2, 1),
+(9, 4, 4, 1),
+(10, 4, 3, 1);
 
 -- --------------------------------------------------------
 
@@ -143,7 +177,15 @@ CREATE TABLE `product` (
 -- Dumping data for table `product`
 --
 
-
+INSERT INTO `product` (`Product_id`, `Name`, `Price`, `Description`, `Image`, `Category_name`, `Quantity`) VALUES
+(1, 'Tanmiah Fresh Chicken Thighs 450g', 10, 'Fresh Chicken Thighs are one of the juiciest parts of our corn-fed birds, consisting of darker meat for a more mouth-watering taste. Available in 450g', 'images/meat.png', 'MEAT & POULTRY', 4),
+(2, 'Oreo Classic 38g× 16', 20, 'The delectable taste of Oreo Cookies is sure to entice your taste buds in its magic spell. These cookies are made from high-quality materials to deliver a top-grade product. The well-balanced taste of these Oreo original cookies makes people with all kind', 'images/Oreo.jpg', 'BISCUITS, CRACKERS & CAKES', 5),
+(3, 'Philips coffee maker, HD7432/2', 300, 'Enjoy the taste and aroma of freshly brewed coffee with this Philips coffee maker. Its compact design is perfect for brewing 2 up to 7 cups. Thanks to the aroma twister, enjoy an optimal taste in each cup of coffee.', 'images/PHILIPS COFFEE.jpg', 'ELECTRONICS & APPLIANCES', 6),
+(4, 'Al Walimah Style Indian Basmati Rice Longgrain 5kg', 45, 'Buy Al walimah style Indian sella basmati rice long grain 5 Kg online now on Carrefour Saudi Arabia. Shop from a large selection of Food Cupboard in Riyadh, Jeddah, KSA and enjoy Carrefours great prices, guaranteed quality, secure payment, fast delivery a', 'images/Rice.png', 'RICE, PASTA & PULSES', 2),
+(5, 'Saudia Long Life Full Fat Milk 1L × 12 Pieces', 61, 'Product Form: Liquid, Type: Milk, Calcium: Yes, Fat: Full Fat\r\nExpirable: Yes, Long Life Dairy, shelf validity 6 months.\r\nThis dairy product is rich with calcium.\r\nCalcium is needed for your kinds and their healthy growth.\r\nIt comes in di', 'images/Saudi Milk.jpg', 'MILK & LABAN', 3),
+(6, 'Nova Water 550ml ×24', 20, 'Nova Mineral Water and healthy water is mobilized from natural groundwater wells\r\nIt is purified at several stages of the filtration process and characterized by its natural stability\r\nThis unique flask is simply more water-packed\r\nHigh quality refreshing', 'images/Nova.jpg', 'WATER', 9),
+(7, 'Nikai NAF788A Air Fryer 3L', 238, 'Air Fryer from Nikai makes cooking a delight. It provides a healthy twist on preparing fried food that is as good to your taste buds as it is to your body.', 'images/Fryer.jpg', 'ELECTRONICS & APPLIANCES', 12),
+(8, 'Alyoum Premium Fresh Chicken Chilled 1kg', 19, 'Healthier without any fatty skin, Alyoum Chilled Chicken is your ideal pick to rule the party scene! Make an exotic, delectable dish with a curry or grill it for family meals and enjoy. Effortless to cook, this is sure to impress your guests too!', 'images/Chicken.jpg', 'MEAT & POULTRY', 2);
 
 --
 -- Indexes for dumped tables
@@ -198,7 +240,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `Admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `category`
@@ -210,25 +252,25 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `Order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `Order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `order_product`
 --
 ALTER TABLE `order_product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `Product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `Product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables
@@ -257,3 +299,4 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+

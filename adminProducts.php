@@ -18,11 +18,12 @@
             <h1 class="lg-title">Sallaty products</h1>
             <form action="modifyProducts.php" method="POST" enctype="multipart/form-data">
             <div class="edit-products">
+             
                 <a href="addProduct.php"><button type="button" class="btn-add">Add Product</button></a>
                 <a href="DeleteProduct.php"><input type="submit" value="Delete Product"> <input type="hidden" name="srcfile" value="delete"> </a>
-                <input type="text" placeholder="Search..">
+                <input id="searchBox" type="text" placeholder="Search.."> 
             </div>
-
+           <?php include 'includes/search.php'; ?>
             <div class="product-items">
                 <!-- product -->
                 <?php

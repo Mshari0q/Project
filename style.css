@@ -797,6 +797,7 @@
 }
 .products .edit-products a button:hover{
     background: #b37c5a;
+
     color: #ffffff;
 }
 
@@ -812,13 +813,13 @@
     transition: all 0.6s ease;
 
 }
+
 .products .edit-products a input:hover{
     background: #b37c5a;
     color: #ffffff;
 }
 
-
-.edit-products input[type=text] {
+.edit-products  input[type=text] {
     float: right;
     padding: 6px;
     border: none;
@@ -828,4 +829,6 @@
    
     
 }
+
+
 
